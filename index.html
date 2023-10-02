@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+
+    <form id="search-form">
+        <input type="text" id="city-input" placeholder="Enter a city">
+        <button type="submit">Search</button>
+    </form>
+    
+    <div id="current-weather">
+        <h2>Current Weather</h2>
+        <p>City: <span id="city-name"></span></p>
+        <p>Date: <span id="date"></span></p>
+        <p>Weather: <img src="" id="weather-icon" alt="Weather Icon"></p>
+        <p>Temperature: <span id="temperature"></span>&deg;C</p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
+    </div>
+    
+    <div id="forecast">
+        <h2>5-Day Forecast</h2>
+    </div>
+    
+    <div id="search-history">
+        <h2>Search History</h2>
+        <ul>
+
+        </ul>
+    </div>
+
+    <script>
+
+        const API_KEY = 'YOUR_API_KEY';
+        const API_URL = 'https://api.openweathermap.org/data/2.5/';
+
+        document.getElementById('search-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const city = document.getElementById('city-input').value;
+            getWeatherData(city);
+        });
+
+        function getWeatherData(city) {
+        
+        }
+
+        function updateSearchHistory(city) {
+        }
+    </script>
+</body>
+</html> 
