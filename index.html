@@ -4,55 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <style>
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Weather Dashboard</h1>
+    <div class="container">
+        <h1 class="mt-4">Weather Dashboard</h1>
 
-    <form id="search-form">
-        <input type="text" id="city-input" placeholder="Enter a city">
-        <button type="submit">Search</button>
-    </form>
-    
-    <div id="current-weather">
-        <h2>Current Weather</h2>
-        <p>City: <span id="city-name"></span></p>
-        <p>Date: <span id="date"></span></p>
-        <p>Weather: <img src="" id="weather-icon" alt="Weather Icon"></p>
-        <p>Temperature: <span id="temperature"></span>&deg;C</p>
-        <p>Humidity: <span id="humidity"></span>%</p>
-        <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
-    </div>
-    
-    <div id="forecast">
-        <h2>5-Day Forecast</h2>
-    </div>
-    
-    <div id="search-history">
-        <h2>Search History</h2>
-        <ul>
-
-        </ul>
-    </div>
-
-    <script>
-
-        const API_KEY = 'YOUR_API_KEY';
-        const API_URL = 'https://api.openweathermap.org/data/2.5/';
-
-        document.getElementById('search-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const city = document.getElementById('city-input').value;
-            getWeatherData(city);
-        });
-
-        function getWeatherData(city) {
+        <form id="search-form" class="mt-4">
+            <div class="input-group">
+                <input type="text" id="city-input" class="form-control" placeholder="Enter a city">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
         
-        }
-
-        function updateSearchHistory(city) {
-        }
-    </script>
+        <div id="current-weather" class="mt-4">
+            <h2>Current Weather</h2>
+            <p>City: <span id="city-name"></span></p>
+            <p>Date: <span id="date"></span></p>
+            <p>Weather: <img src="" id="weather-icon" alt="Weather Icon"></p>
+            <p>Temperature: <span id="temperature"></span>&deg;C</p>
+            <p>Humidity: <span id="humidity"></span>%</p>
+            <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
+        </div>
+        
+        <div id="forecast" class="mt-4">
+            <h2>5-Day Forecast</h2>
+        </div>
+        
+        <div id="search-history" class="mt-4">
+            <h2>Search History</h2>
+            <ul class="list-group">
+            </ul>
+        </div>
+    </div>
 </body>
-</html> 
+</html>
